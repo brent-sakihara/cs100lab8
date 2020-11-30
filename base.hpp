@@ -2,6 +2,7 @@
 #define __BASE_HPP__
 
 #include <string>
+class Iterator;
 
 class Base {
     public:
