@@ -75,6 +75,7 @@ TEST(BinaryIteratorTest, TreeWithMultOperatorTest2){
         EXPECT_EQ(it->current()->evaluate(), 8);
         it->next();
         EXPECT_EQ(it->current()->evaluate(), -1);
+}
 
 TEST(SubBinaryIteratorTest, Sub){
 	Base* num = new Op(4);
