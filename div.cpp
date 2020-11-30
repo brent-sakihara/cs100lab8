@@ -5,6 +5,7 @@
 #include <stdexcept>
 
 #include "iterator.hpp"
+#include "visitor.hpp"
 
 double Div::evaluate(){
 	if (right->evaluate() == 0.0){
@@ -28,5 +29,9 @@ Base* Div::get_left(){
 
 Base* Div::get_right(){
         return right;
+}
+
+void Div::accept(CountVisitor* v){
+	v->visit_div();
 }
 

@@ -1,6 +1,7 @@
 #include "arithmetic_operations.hpp"
 #include "base.hpp"
 #include "iterator.hpp"
+#include "visitor.hpp"
 
 double Add::evaluate(){
 	return left->evaluate() + right->evaluate();
@@ -22,3 +23,8 @@ Base* Add::get_left(){
 Base* Add::get_right(){
 	return right;
 }
+
+void Add::accept(CountVisitor* v){
+	v->visit_add();
+}
+

@@ -1,6 +1,7 @@
 #include "pow.hpp"
 #include <math.h>
 #include "iterator.hpp"
+#include "visitor.hpp"
 
 double Pow::evaluate() {
 	return pow(op->evaluate(), op2->evaluate());
@@ -23,4 +24,8 @@ Base* Pow::get_left(){
 Base* Pow::get_right(){
         return op2;
 }
+
+void Pow::accept(CountVisitor* v){
+	v->visit_pow();
+}	
 

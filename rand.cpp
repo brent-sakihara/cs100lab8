@@ -1,5 +1,6 @@
 #include "op.hpp"
 #include "iterator.hpp"
+#include "visitor.hpp"
 
 double Rand::evaluate() {
         return random;
@@ -21,5 +22,9 @@ Base* Rand::get_left(){
 
 Base* Rand::get_right(){
         return nullptr;
+}
+
+void Rand::accept(CountVisitor* v){
+	return v->visit_rand();
 }
 

@@ -1,5 +1,6 @@
 #include "op.hpp"
 #include "iterator.hpp"
+#include "visitor.hpp"
 
 double Op::evaluate() {
 	return num;
@@ -20,5 +21,9 @@ Base* Op::get_left(){
 
 Base* Op::get_right(){
         return nullptr;
+}
+
+void Op::accept(CountVisitor* v){
+	v->visit_op();
 }
 

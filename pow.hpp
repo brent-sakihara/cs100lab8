@@ -2,6 +2,7 @@
 #define __POW_HPP__
 
 #include "base.hpp"
+#include "visitor.hpp"
 
 class Pow : public Base {
      public:
@@ -14,6 +15,7 @@ class Pow : public Base {
 	virtual Iterator* create_iterator();
         virtual Base* get_left();
         virtual Base* get_right();
+	void accept(CountVisitor* v);
      private:
 	Base* op;
 	Base* op2;

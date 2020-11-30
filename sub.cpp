@@ -1,6 +1,7 @@
 #include "arithmetic_operations.hpp"
 #include "base.hpp"
 #include "iterator.hpp"
+#include "visitor.hpp"
 
 double Sub::evaluate(){
 	return left->evaluate() - right->evaluate();
@@ -22,4 +23,9 @@ Base* Sub::get_left(){
 Base* Sub::get_right(){
         return right;
 }
+
+void Sub::accept(CountVisitor* v){
+	v->visit_sub();
+}
+
 
