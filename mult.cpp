@@ -2,6 +2,7 @@
 #include "arithmetic_operations.hpp"
 #include "base.hpp"
 #include "iterator.hpp"
+#include "visitor.hpp"
 
 double Mult::evaluate() {
 	return left->evaluate() * right->evaluate();
@@ -23,5 +24,9 @@ Base* Mult::get_left(){
 
 Base* Mult::get_right(){
         return right;
+}
+
+void Mult::accept(CountVisitor* v){
+	v->visit_mult();
 }
 
