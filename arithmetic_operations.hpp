@@ -2,6 +2,7 @@
 #define __Arithmetic_Operations_HPP__
 
 #include "base.hpp"
+#include "visitor.hpp"
 
 class Mult : public Base {
     public:
@@ -11,6 +12,7 @@ class Mult : public Base {
 	virtual Iterator* create_iterator();
 	virtual Base* get_left();
 	virtual Base* get_right();
+	void accept(CountVisitor* v);
 
     private:
 	Base* left;
@@ -27,7 +29,8 @@ class Div : public Base {
 	virtual Iterator* create_iterator();
         virtual Base* get_left();
         virtual Base* get_right();
-
+	void accept(CountVisitor* v);
+	
     private:
 	Base* left;
 	Base* right;
@@ -42,6 +45,7 @@ class Add : public Base {
 	virtual Iterator* create_iterator();
         virtual Base* get_left();
         virtual Base* get_right();
+	void accept(CountVisitor* v);
 
     private:
 	Base* left;
@@ -57,6 +61,7 @@ class Sub : public Base {
 	virtual Iterator* create_iterator();
         virtual Base* get_left();
         virtual Base* get_right();
+	void accept(CountVisitor* v);
     
     private:
 	Base* left;

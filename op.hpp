@@ -3,6 +3,7 @@
 
 #include "base.hpp"
 #include <stdlib.h>
+#include "visitor.hpp"
 
 class Op : public Base {
     public:
@@ -12,8 +13,9 @@ class Op : public Base {
         double evaluate();
         std::string stringify();
 	virtual Iterator* create_iterator();
-        virtual Base* get_left();
-        virtual Base* get_right();
+        virtual Base* get_left() override;
+        virtual Base* get_right() override;
+	void accept(CountVisitor* v);
      private:
 	double num = 0;
 };
@@ -28,6 +30,7 @@ class Rand : public Base {
 	virtual Iterator* create_iterator();
         virtual Base* get_left();
         virtual Base* get_right();
+	void accept(CountVisitor* v);
      private:
         double random = 0;
 };
