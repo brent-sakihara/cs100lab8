@@ -1,6 +1,7 @@
 #include "gtest/gtest.h"
 
 #include "iterator_test.hpp"
+#include "count_visitor_test.hpp"
 #include "base.hpp"
 #include "op.hpp"
 #include "pow.hpp"

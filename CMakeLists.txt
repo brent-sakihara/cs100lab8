@@ -13,6 +13,8 @@ ADD_EXECUTABLE(test
         add.cpp
         sub.cpp
         binary_iterator.cpp
+	countvisitor.cpp
+	preorder_iterator.cpp
 	unit_test.cpp
 )
 
